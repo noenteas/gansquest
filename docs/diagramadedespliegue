@@ -1,0 +1,36 @@
+@startuml
+cloud vpc_Amazonn{
+
+rectangle instancia_publica_app{
+
+
+component APLICACIONWEB{
+folder ganquestapp{
+}
+}
+
+component DATABASE {
+database db_Ganquest{
+
+}
+}
+}
+}
+
+
+component RepositorioGithub{
+
+
+}
+node PC_CLIENTE{
+rectangle chrome{
+}
+}
+
+APLICACIONWEB -[dashed]-> DATABASE : Interaccion DB
+RepositorioGithub-[#blue;dotted]-> APLICACIONWEB : Actualizacion de aplicacion
+
+actor UsuarioFinal
+UsuarioFinal-[dashed]-> PC_CLIENTE
+chrome-[dashed]-> APLICACIONWEB: Solicitud HTTP
+@enduml
