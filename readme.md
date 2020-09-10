@@ -1,6 +1,6 @@
 
 
-## DESPLEGADO EN https://ganquest.ml
+## DESPLEGADO EN https://gansquest.ml
 
 
-- [GANQUEST DESPLEGADO](https://ganquest.ml/)
+- [GANQUEST DESPLEGADO](https://gansquest.ml/)
