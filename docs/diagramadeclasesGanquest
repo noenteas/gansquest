@@ -1,0 +1,39 @@
+@startuml
+
+title Classes - Diagrama de clases - GANQUEST
+
+
+class juego_categoria {
+  +Int id
+  +Varchar tema
+  +Int nro_preguntas
+  
+
+}
+
+class jugador {
+    +int id
+    +varchar correo
+    +varchar alias
+}
+
+class pregunta {
+  +int id
+  +int id_juego_categoria
+  +varchar pregunta
+  +enum tipos_pregunta
+  +Varchar respuesta_correcta
+}
+
+class jugada {
++int id
++int id_jugador
++int id_pregunta
++varchar calificacion
++int preguntas_correctas
+}
+pregunta }-- juego_categoria
+jugada }-- juego_categoria
+jugada }-- jugador
+
+@enduml
