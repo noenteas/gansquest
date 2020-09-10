@@ -1,0 +1,50 @@
+@startuml
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+
+
+entity "juego_categoria" as e01 {
+  *id : number <<generated>>
+  --
+  *tema: text
+  *numero_preguntas: number
+}
+
+
+
+entity "pregunta" as e02 {
+  *id : number <<generated>>
+  --
+  *pregunta : text
+  *tipo_pregunta : enum
+  *respuesta_correcta : varchar
+  *id_juego_categoria : number <<FK>>
+
+}
+
+
+entity "jugador" as e03 {
+  *id : number <<generated>>
+  --
+  *alias : varchar
+  *correo : varchar
+  *contrasenia : varchar
+  e1_id : number <<FK>>
+}
+
+entity "jugada" as e04 {
+  *id : number <<generated>>
+  --
+  id_juego_categoria : number <<FK>>
+  id_jugador: number <<FK>>
+  *calificacion: varchar
+}
+
+e01 ||..o{ e02
+e01 ||..o{ e04
+e03 ||..o{ e04
+@enduml
