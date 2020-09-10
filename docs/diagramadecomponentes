@@ -1,0 +1,27 @@
+@startuml
+package "Aplicacion web"{
+
+package "Presentacion" {
+  HTTP - [Interfaz de usuario]
+ 
+}
+package "Controlador" {
+ [Control de jugada]
+ [Interfaz de usuario] --> [Control de jugada]
+ 
+}
+package "Logica de negocio" {
+ [Gestion Jugada]
+ [Control de jugada] --> [Gestion Jugada]
+ 
+}
+
+database "MySql" {
+ 
+  frame "Base de datos" {
+    [ganquest]
+     [Gestion Jugada] --> [ganquest]
+  }
+}
+
+@enduml
